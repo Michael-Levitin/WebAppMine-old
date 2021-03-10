@@ -27,12 +27,17 @@ public class Resume {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Resume resume = (Resume) o;
-    return uuid.equals(resume.uuid);
+    return Objects.equals(uuid, resume.uuid) &&
+            Objects.equals(fullName, resume.fullName) &&
+            Objects.equals(homePage, resume.homePage) &&
+            Objects.equals(location, resume.location) &&
+            Objects.equals(contacts, resume.contacts) &&
+            Objects.equals(sections, resume.sections);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uuid);
+    return Objects.hash(uuid, fullName, homePage, location, contacts, sections);
   }
 
   public String getUuid() {
