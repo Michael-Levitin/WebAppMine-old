@@ -1,10 +1,12 @@
 package ru.javawebinar.webapp.model;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Resume {
+public class Resume implements Comparable<Resume>{
   private String uuid;
   private String fullName;
   private String homePage;
@@ -64,6 +66,30 @@ public class Resume {
     return sections;
   }
 
+  public void setUuid(String uuid) {
+    this.uuid = uuid;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
+
+  public void setHomePage(String homePage) {
+    this.homePage = homePage;
+  }
+
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public void setContacts(List<Contact> contacts) {
+    this.contacts = contacts;
+  }
+
+  public void setSections(List<Section> sections) {
+    this.sections = sections;
+  }
+
   public void addSection(Section s) {
     sections.add(s);
   }
@@ -72,4 +98,8 @@ public class Resume {
     contacts.add(c);
   }
 
+  @Override
+  public int compareTo(@NotNull Resume o) {
+    return fullName.compareTo(o.fullName);
+  }
 }
