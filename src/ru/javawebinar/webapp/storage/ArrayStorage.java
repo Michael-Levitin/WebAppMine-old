@@ -48,7 +48,7 @@ public class ArrayStorage implements IStorrage {
     LOGGER.info("Loading resume with uiid = " + uuid);
     int idx = getIndex(uuid);
     if (idx == -1)
-      throw new WebAppException("Resume with uiid = " + uuid + "doesn't exists");
+      throw new WebAppException("Resume with uiid = " + uuid + " doesn't exists");
     return array[idx];
   }
 
@@ -57,7 +57,7 @@ public class ArrayStorage implements IStorrage {
     LOGGER.info("Deleting resume with uiid = " + uuid);
     int idx = getIndex(uuid);
     if (idx == -1)
-       throw new WebAppException("Resume with uiid = " + uuid + "doesn't exists");
+       throw new WebAppException("Resume with uiid = " + uuid + " doesn't exists");
     int numMoved = size - idx - 1;
     if (numMoved > 0)
       System.arraycopy(array, idx+1, array, idx, numMoved);
@@ -74,7 +74,7 @@ public class ArrayStorage implements IStorrage {
   public int size() {
     int arraySize = 0;
     for (Resume resume : array) {
-      if (resume.getUuid() == null)
+      if (resume == null || resume.getUuid() == null)
         break;
       arraySize++;
     }
