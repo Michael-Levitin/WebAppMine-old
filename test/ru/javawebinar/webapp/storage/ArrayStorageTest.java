@@ -29,14 +29,14 @@ class ArrayStorageTest {
   @BeforeEach
   void beforeEach() {
     R1 = new Resume("Полное имя1", "location1");
-    R1.addContact(new Contact(ContactType.MAIL, "mail@yandex.ru"));
-    R1.addContact(new Contact(ContactType.PHONE, "11111"));
+//    R1.addContact(new Contact(ContactType.MAIL, "mail@yandex.ru"));
+//    R1.addContact(new Contact(ContactType.PHONE, "11111"));
     R2 = new Resume("Полное имя2", "location2");
-    R2.addContact(new Contact(ContactType.SKYPE, "krolik"));
-    R2.addContact(new Contact(ContactType.PHONE, "22222"));
+//    R2.addContact(new Contact(ContactType.SKYPE, "krolik"));
+//    R2.addContact(new Contact(ContactType.PHONE, "22222"));
     R3 = new Resume("Полное имя3", "location3");
-    R3.addContact(new Contact(ContactType.ICQ, "65454821"));
-    R3.addContact(new Contact(ContactType.PHONE, "3333"));
+//    R3.addContact(new Contact(ContactType.ICQ, "65454821"));
+//    R3.addContact(new Contact(ContactType.PHONE, "3333"));
 
     storage.clear();
     storage.save(R3);
